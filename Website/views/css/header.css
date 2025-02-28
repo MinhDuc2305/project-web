@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Màu nền cho trang */
+}
+
+header {
+    background-color: #2BBCFF; /* Màu nền cho header */
+    color: rgb(0, 0, 0);
+    padding: 9px 20px;
+    max-height: 59px;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+header .banner {
+    display: flex;
+    align-items: center; 
+    margin: auto;
+}
+
+header .logo svg{
+    margin-left: 40px;
+    margin-right: 14px;
+}
+
+header .system-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    justify-content: space-between; /* Căn đều giữa menu và nút đăng nhập, đăng ký */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 100%; /* Đảm bảo nav chiếm toàn bộ chiều rộng */
+}
+
+.menu {
+    list-style: none;  
+    display: flex; /* Hiển thị các mục theo hàng ngang */
+    padding: 0;
+    margin: 0;
+    margin-left: 35px;
+}
+.menu .fa{
+    margin-right: 6px;
+}
+
+.menu a {
+    color: rgb(0, 0, 0); /* Màu chữ cho nút */
+    text-decoration: none; /* Bỏ gạch chân */
+    padding: 25px 20px 19px 20px; 
+    transition: background 0.3s;
+    
+}
+.menu2 a {
+    
+    color: rgb(0, 0, 0); /* Màu chữ cho nút */
+    text-decoration: none; /* Bỏ gạch chân */
+    /* padding: 25px 20px 19px 20px;  */
+    transition: background 0.3s;
+    
+}
+
+.menu a:hover {
+    background: #1C80AF; /* Màu nền khi hover */
+    color: #f4f4f4;
+}
+
+.auth-buttons {
+    display: flex;
+    margin-right: 40px;
+    position: relative;
+}
+
+
+.auth-buttons a {
+    color: rgb(0, 0, 0); /* Màu chữ cho nút */
+    text-decoration: none; /* Bỏ gạch chân */
+    padding: 10px 10px ; /* Padding cho nút */
+    border-radius: 5px;
+    transition: background 0.3s; /* Hiệu ứng chuyển đổi */
+    font-size: 13px;
+}
+
+.auth-buttons a:hover {
+    background: #1C80AF; /* Màu nền khi hover */
+    color: #f4f4f4;
+}
+.auth-buttons p{
+    display: flex;
+    
+}
+.auth-buttons svg{
+    height: 33px;
+    margin-right: -11px;
+    padding: 0;
+}
+.Bell-button{
+    display: flex;
+    margin-right: 40px;
+    position: relative;
+}
+
+@media screen and (max-width: 476px){
+    header .auth-buttons{
+        display: none;
+    }
+    header .menu{
+        display: none;
+    }
+    header .logo svg{
+        margin-left: 0px;
+    }
+    header .system-name {
+        margin-right: 0px;
+    }
+}
