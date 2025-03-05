@@ -5,7 +5,7 @@ footer {
     padding: 10px 0;
     width: 100%;
 }
-a{
+footer a{
     text-decoration: none;
     color: #ffffff;
 }
@@ -61,6 +61,7 @@ footer h2{
 }
 .list a{
     font-size: 19px;
+    color: white;
 }
 .list li::before{
     content: '';
@@ -102,6 +103,15 @@ footer h2{
     font-weight: bold;
 }
 @media screen and (max-width: 476px){
+    footer .footer-content{
+        display: none;
+    }
+    footer .logo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1140px){
     footer .footer-content{
         display: none;
     }

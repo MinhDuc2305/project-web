@@ -1,189 +1,164 @@
-/* main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+main {
+  padding: 20px 0;
 }
-main img{
-    
-    height: auto;
-    width: 500px;
-    
-} */
 
 main .banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    object-fit: cover;
-  }
-  
-  .banner-image {
-    width: 100%;
-    height: 100%; /* Fill the banner container */
-    object-fit: cover; /* Crop and cover the area without distortion */
-    object-position: center; /* Center the 1728×499 portion horizontally and vertically */
-    display: block; /* Remove any default spacing under the image */
-  }
-  
-  /* Responsive adjustments for smaller screens */
-  @media screen and (max-width: 1728px) {
-    .banner {
-        max-width: 100%; /* Allow full width on screens narrower than 1728px */
-        height: auto; /* Adjust height proportionally */
-    }
-  
-    .banner-image {
-        width: 100%;
-        height: auto; /* Scale height with width */
-        object-fit: contain; /* Fit the image within the container, maintaining aspect ratio */
-        object-position: center; /* Keep the centered portion */
-        max-height: 499px; /* Ensure height doesn’t exceed your specified maximum */
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .banner {
-        height: 200px; /* Reduced height for tablets */
-    }
-  
-    .banner-image {
-        object-fit: cover; /* Crop to fit smaller screens */
-        
-    }
-  
-    .stats-columns {
-        flex-direction: column; /* Stack columns on mobile */
-        gap: 10px; /* Reduce gap on mobile */
-    }
-  
-    .top-column {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Remove fixed heights on mobile */
-        min-height: 100px; /* Minimum height for readability */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .banner {
-        height: 150px; /* Even smaller height for very small screens */
-    }
-  
-    .banner-image {
-        object-fit: cover; /* Crop to fit very small screens */
-    }
-  
-    .header-top {
-        flex-direction: column; /* Stack header elements on very small screens */
-        align-items: flex-start; /* Align to the start */
-        padding: 10px; /* Reduce padding */
-    }
-  
-    .logo-section, nav {
-        width: 100%; /* Full width for navigation and logo */
-        margin-bottom: 10px; /* Space between stacked elements */
-    }
-  }
-  
-  /* ... (keep all remaining CSS unchanged) ... */
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-    
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto; /* Chiều cao tự động điều chỉnh theo chiều rộng */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.container {
+  width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng màn hình */
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.content-row {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các phần tử xuống dòng khi không đủ chỗ */
+  gap: 20px;
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+}
+
+.news, .stats {
+  flex: 1; /* Mỗi phần chiếm tối đa không gian có thể */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  min-width: 0; /* Ngăn chặn flex item bị co lại quá mức */
+}
+
+.news h2 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.stats {
+  background-color: #ffe6f0; /* Pink background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.stats h2 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.stats-columns {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.top-column {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0; /* Ngăn chặn co lại quá mức */
+}
+
+.top-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.book-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.book-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.book-count {
+  font-weight: normal;
+}
+
+.top-1 {
+  background-color: #ff4040; /* Red for Top 1 */
+  height: 200px;
+}
+
+.top-2 {
+  background-color: #ff8c00; /* Orange for Top 2 */
+  height: 160px;
+}
+
+.top-3 {
+  background-color: #ffff40; /* Yellow for Top 3 */
+  height: 120px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
   .content-row {
-    display: flex;
-    gap: 20px;
+      flex-direction: column; /* Chuyển sang bố cục dọc */
   }
-  
+
   .news, .stats {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      width: 100%; /* Đảm bảo mỗi phần chiếm toàn bộ chiều rộng */
   }
-  
-  .news h2 {
-    color: #0066cc;
-    margin-bottom: 10px;
-  }
-  
-  /* styles.css - Updated parts only */
-  
-  /* ... (keep all previous CSS unchanged until stats) ... */
-  
-  .stats {
-    background-color: #ffe6f0; /* Pink background */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  }
-  
-  .stats h2 {
-    color: #0066cc;
-    margin-bottom: 10px;
-  }
+
   .stats-columns {
-    display: flex;
-    gap: 20px; /* Spacing between columns */
-    justify-content: space-between; /* Distribute columns evenly */
-    align-items: flex-end; /* Align columns at the bottom (feet level) */
+      flex-direction: column; /* Chuyển các cột stats thành dọc */
+      gap: 10px; /* Giảm khoảng cách giữa các cột */
   }
-  
-  .top-column {
-    flex: 1; /* Each column takes equal base width */
-    padding: 10px; /* Inner padding for content */
-    text-align: center; /* Center text within columns */
-    border-radius: 5px; /* Rounded corners */
-    color: #333; /* Default text color */
-    font-size: 14px; /* Smaller font size to fit the design */
-    line-height: 1.2; /* Tighten line spacing */
-    display: flex; /* Use flex for internal stacking */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: flex-start; /* Align content from the top within the column */
-    align-items: center; /* Center content horizontally */
-  }
-  
-  .top-label {
-    font-size: 16px; /* Slightly larger for "Top X:" */
-    font-weight: bold; /* Bold for emphasis */
-    color: #333;
-    margin-bottom: 10px; /* Space between label and content */
-  }
-  
-  .book-content {
-    flex: 1; /* Allow content to take remaining space */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content from the top */
-    align-items: center; /* Center content horizontally */
-  }
-  
-  .book-title {
-    font-weight: bold; /* Bold title */
-    margin-bottom: 5px; /* Space between title and count */
-  }
-  
-  .book-count {
-    font-weight: normal; /* Normal weight for numbers */
-  }
-  
+
+  /* Đặt thứ tự cột khi responsive */
   .top-1 {
-    background-color: #ff4040; /* Red for Top 1 */
-    height: 200px; /* Tallest column */
+      order: 1; /* Top 1 lên đầu */
   }
-  
   .top-2 {
-    background-color: #ff8c00; /* Orange for Top 2 */
-    height: 160px; /* Medium height column */
+      order: 2; /* Top 2 tiếp theo */
   }
-  
   .top-3 {
-    background-color: #ffff40; /* Yellow for Top 3 */
-    height: 120px; /* Shortest column */
+      order: 3; /* Top 3 cuối cùng */
   }
-  
-  /* ... (keep all remaining CSS unchanged) ... */
+
+  .top-column {
+      width: 100%; /* Mỗi cột chiếm toàn bộ chiều rộng */
+      min-height: 100px; /* Đảm bảo chiều cao tối thiểu để hiển thị nội dung */
+  }
+}
+@media screen and (max-width: 480px) {
+  .banner {
+      height: 150px; /* Giảm chiều cao banner trên màn hình rất nhỏ */
+  }
+
+  .banner-image {
+      object-fit: cover;
+  }
+
+  .news, .stats {
+      padding: 10px; /* Giảm padding trên màn hình rất nhỏ */
+  }
+}

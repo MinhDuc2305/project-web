@@ -10,6 +10,7 @@ header {
     color: rgb(0, 0, 0);
     padding: 9px 20px;
     max-height: 59px;
+    
 }
 
 a{
@@ -26,13 +27,15 @@ header .banner {
 header .logo svg{
     margin-left: 40px;
     margin-right: 14px;
+    
 }
 
 header .system-name{
     font-size: 25px;
     font-weight: bold;
+    color: white;
 }
-nav {
+.nav__pc {
     display: flex;
     justify-content: space-between; /* Căn đều giữa menu và nút đăng nhập, đăng ký */
     align-items: center; /* Căn giữa theo chiều dọc */
@@ -106,17 +109,107 @@ nav {
     position: relative;
 }
 
-@media screen and (max-width: 476px){
-    header .auth-buttons{
-        display: none;
+
+/* Mobile nav */
+.nav__bars-btn{
+    width: 50px;
+    color: #f4f4f4;
+    display: none;
+}
+.nav__overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.nav__mobile{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    height: auto;
+    max-width: 100%;
+    background-color: #f4f4f4;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform linear 0.2s, opacity linear 0.2s;
+}
+
+.menu-mobile{
+    margin-top: 24px;
+    list-style: none;  
+}
+
+.nav__mobile-link{
+    text-decoration: none;
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    
+}
+
+.nav__mobile-link a{
+    color: #000000;
+}
+
+.nav__mobile-link i{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.nav__mobile-close svg{
+    width: 28px;
+    height: 28px;
+    margin-left: 270px;
+    margin-top: 20px;
+}
+
+.nav_input:checked ~ .nav__overlay{
+    display: block;
+
+}
+
+.nav_input:checked ~ .nav__mobile{
+    transform: translateX(0%);
+    opacity: 1;
+
+}
+
+@media (max-width: 1024px){
+    .nav__bars-btn{
+        display: block;
+    }
+    header .banner{
+        flex-direction: row;
     }
     header .menu{
         display: none;
     }
+    header .auth-buttons{
+        display: none;
+    }
+    header .banner {
+        display: flex;
+        height: 46px;
+        align-items: center;
+    }
     header .logo svg{
         margin-left: 0px;
     }
-    header .system-name {
-        margin-right: 0px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
+
