@@ -1,0 +1,41 @@
+body {
+    background-color: #f8f9fa;
+  }
+  .book-card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .book-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .book-cover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+  }
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rating span {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .rating span:hover,
+  .rating span.active {
+    color: gold;
+  }
+  @media screen and (max-width: 768px) {
+    .book-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
